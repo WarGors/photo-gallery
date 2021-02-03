@@ -1,9 +1,9 @@
-import './closePhoto.css'
+import classes from './closePhoto.module.css'
 
 const ClosePhoto = props => {
   const { closePhoto } = props
   return (
-    <div onClick={closePhoto} className="close"></div>
+    <div onClick={closePhoto} className={classes.close}></div>
   )
 }
 

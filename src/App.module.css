@@ -35,3 +35,8 @@ footer {
   align-items: center;
   font-size: 0.7em;
 }
+
+.go-home {
+  text-decoration: none;
+  color: white;
+}

@@ -1,9 +1,9 @@
-import './nextPhoto.css'
+import classes from './nextPhoto.module.css'
 
 const NextPhoto = props => {
   const { direction, goNext } = props
   return (
-    <i direction={direction} className={direction} onClick={goNext}></i>
+    <i direction={direction} className={classes[direction]} onClick={goNext}></i>
   )
 }
 

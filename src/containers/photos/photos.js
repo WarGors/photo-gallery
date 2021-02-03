@@ -5,7 +5,7 @@ import NotFound from "../../components/notFound/notFound";
 import PhotoFullSize from "../../components/photoFullSize/photoFullSize";
 import PhotosList from "../../components/photosList/photosList"
 import { setPhotoData } from "../../redux/actions/actions";
-import "./photos.css";
+import classes from "./photos.module.css";
 
 const Photos = props => { 
   const { users, currentPhoto, setPhotoData, usersIsLoad, photosIsLoad } = props;
@@ -15,7 +15,7 @@ const Photos = props => {
 
   if (!usersIsLoad || !photosIsLoad) {
     return (
-      <div className='photos-container'>
+      <div className={classes['photos-container']}>
         <Loader />
       </div>
     )

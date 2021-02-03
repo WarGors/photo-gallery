@@ -1,9 +1,9 @@
-import './notFound.css'
+import classes from './notFound.module.css'
 
 const NotFound = () => {
   return (
-    <div className='notfound-container'>
-      <div className='center'>NOT FOUND</div>
+    <div className={classes['notfound-container']}>
+      <div className={classes.center}>NOT FOUND</div>
     </div>
   )
 }

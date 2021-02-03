@@ -1,10 +1,10 @@
-import './photoList.css'
+import classes from './photoList.module.css'
 
 const PhotosList = props => {
   const {photos, setPhotoData} = props;
 
   return (
-    <ul className='photo-list'>
+    <ul className={classes['photo-list']}>
       {photos.map((photo, index) => {
         return (
           <li 

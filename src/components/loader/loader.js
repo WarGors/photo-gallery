@@ -1,8 +1,8 @@
-import './loader.css'
+import classes from './loader.module.css'
 
 const Loader = () => (
-<div className='center'>
-  <div className='lds-spinner'>
+<div className={classes.center}>
+  <div className={classes['lds-spinner']}>
     <div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div />
   </div>
 </div>

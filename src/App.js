@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Route, Switch } from 'react-router-dom';
-import './App.css';
+import { NavLink, Route, Switch } from 'react-router-dom';
+import classes from './App.module.css';
 import NotFound from './components/notFound/notFound';
 import Albums from './containers/albums/albums';
 import Homepage from './containers/homepage/homepage';
@@ -17,16 +17,16 @@ const App = props => {
 
     return (
       <main>
-        <header>Photo Gallery Name</header>
-        <div className='content'>
+        <header><NavLink className={classes['go-home']} to='/'>Photo Gallery Name</NavLink></header>
+        <div className={classes.content}>
           <Switch>
             <Route path='/' exact component={Homepage} />
             <Route path='/user-:authorID-albums' component={Albums}/>
             <Route path='/user-:authorID-album-:albumID' component={Photos}/>
-            <Route  render={NotFound}/>
+            <Route render={NotFound}/>
           </Switch>
         </div>
-        <footer className='footer'>Контакты © Имя Владельца</footer>
+        <footer>Контакты © Имя Владельца</footer>
       </main>
       
     );

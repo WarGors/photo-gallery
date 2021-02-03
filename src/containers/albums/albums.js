@@ -3,7 +3,7 @@ import AlbumsList from "../../components/albumsList/albumsList";
 import BackButton from "../../components/buttons/backButton/backButton";
 import Loader from "../../components/loader/loader";
 import NotFound from "../../components/notFound/notFound";
-import './albums.css'
+import classes from './albums.module.css'
 
 const Albums = props => {
   const { users, usersIsLoad, photosIsLoad } = props
@@ -12,7 +12,7 @@ const Albums = props => {
 
   if (!usersIsLoad || !photosIsLoad) {
     return (
-      <div className='albums-container'>
+      <div className={classes['albums-container']}>
         <Loader />
       </div>
     )
@@ -26,7 +26,7 @@ const Albums = props => {
   const albumsArr = Object.entries(authorAlbums);
 
   return (
-    <div className='albums-container'>
+    <div className={classes['albums-container']}>
       <BackButton target='авторам' href='/' />
       <AlbumsList albums={albumsArr} authorID={authorID} />
     </div>
