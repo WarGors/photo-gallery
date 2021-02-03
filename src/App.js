@@ -1,25 +1,47 @@
-import logo from './logo.svg';
+import { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
+import NotFound from './components/notFound/notFound';
+import Albums from './containers/albums/albums';
+import Homepage from './containers/homepage/homepage';
+import Photos from './containers/photos/photos';
+import { usersLoad } from './redux/actions/actions';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = props => {
+    const { usersLoad } = props;
+    
+    useEffect(() => {
+      usersLoad()  
+    }, [usersLoad])
+
+    return (
+      <main>
+        <header>Photo Gallery Name</header>
+        <div className='content'>
+          <Switch>
+            <Route path='/' exact component={Homepage} />
+            <Route path='/user-:authorID-albums' component={Albums}/>
+            <Route path='/user-:authorID-album-:albumID' component={Photos}/>
+            <Route  render={NotFound}/>
+          </Switch>
+        </div>
+        <footer className='footer'>Контакты © Имя Владельца</footer>
+      </main>
+      
+    );
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    users: state.users
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    usersLoad: () => dispatch(usersLoad()),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
