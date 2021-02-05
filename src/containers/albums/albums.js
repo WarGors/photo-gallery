@@ -27,7 +27,7 @@ const Albums = props => {
 
   return (
     <div className={classes['albums-container']}>
-      <BackButton target='авторам' href='/' />
+      <BackButton target='авторам' href='/photo-gallery' />
       <AlbumsList albums={albumsArr} authorID={authorID} />
     </div>
   )

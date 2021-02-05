@@ -5,7 +5,7 @@ const AuthorsList = props => {
   const { users } = props
   return (
     <ul className={classes['authors-ul']}>
-      {users.map( ([id, user]) => <li key={id}>{<NavLink className={classes['author-name']} to={`/user-${id}-albums`}>{user.name}</NavLink>}</li>)}
+      {users.map( ([id, user]) => <li key={id}>{<NavLink className={classes['author-name']} to={`/photo-gallery/user-${id}-albums`}>{user.name}</NavLink>}</li>)}
     </ul>
   )
 }

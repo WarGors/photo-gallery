@@ -17,12 +17,12 @@ const App = props => {
 
     return (
       <main>
-        <header><NavLink className={classes['go-home']} to='/'>Photo Gallery Name</NavLink></header>
+        <header><NavLink className={classes['go-home']} to='/photo-gallery'>Photo Gallery Name</NavLink></header>
         <div className={classes.content}>
           <Switch>
-            <Route path='/' exact component={Homepage} />
-            <Route path='/user-:authorID-albums' component={Albums}/>
-            <Route path='/user-:authorID-album-:albumID' component={Photos}/>
+            <Route path='/photo-gallery' exact component={Homepage} />
+            <Route path='/photo-gallery/user-:authorID-albums' component={Albums}/>
+            <Route path='/photo-gallery/user-:authorID-album-:albumID' component={Photos}/>
             <Route render={NotFound}/>
           </Switch>
         </div>

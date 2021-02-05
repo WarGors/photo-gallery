@@ -49,7 +49,7 @@ const Photos = props => {
 
   return (
     <>
-      <BackButton target={'альбомам'} href={`/user-${authorID}-albums`}/>
+      <BackButton target={'альбомам'} href={`/photo-gallery/user-${authorID}-albums`}/>
       {currentPhoto 
         ? <PhotoFullSize 
             url={currentPhoto.url} 
